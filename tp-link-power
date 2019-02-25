@@ -1,0 +1,17 @@
+def inventory_tp_link_power(info):
+    alias = info[0][1]
+    yield alias, (50, 150)
+
+
+def check_tp_link_power(item, params, info):
+    for line in info:
+        if line[1] == item: 
+            return 0, "Current consumption " + line[2] + "W", [ ( "power", line[2] ) ]
+
+check_info["tp-link-power"] = {
+    'check_function':            check_tp_link_power,
+    'inventory_function':        inventory_tp_link_power,
+    'service_description':       'Power consumption',
+    'has_perfdata':              True,
+}
+
