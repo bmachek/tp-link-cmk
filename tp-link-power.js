@@ -15,5 +15,5 @@ function logPower(data)  {
 	var alias = data.sysInfo.alias;
 	alias = alias.replace(/ /, "_");
 	console.log("<<<tp-link-power>>>");
-	console.log(host + " \'" + alias  + "\' " + power);
+	console.log(host + " " + alias  + " " + power);
 }
